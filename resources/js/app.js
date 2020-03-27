@@ -3,10 +3,18 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+import User from "./Helper/User.js"
+import Token from "./Helper/Token.js"
+import AppStorage from "./Helper/AppStorage.js"
 
 require('./bootstrap');
 
 window.Vue = require('vue');
+window.User = User;
+window.Token = Token;
+window.AppStorage = AppStorage;
+
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -21,6 +29,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 import AppHome from "./AppHome.vue"
+import router from "./Router/Router.js"
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -31,5 +40,5 @@ import AppHome from "./AppHome.vue"
 const app = new Vue({
     components: { AppHome },
     el: '#app',
-
+    router
 });

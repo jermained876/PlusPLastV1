@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('main');
 });
+
+Route::get('/{any}', function () {
+    return view('main');
+});
+/*
+Route::get('/home', function () {
+    return view('index');
+});
+
+*/
