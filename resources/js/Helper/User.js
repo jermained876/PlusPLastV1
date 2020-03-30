@@ -10,10 +10,10 @@ class User {
                     }
                     afterLogin(res)
                     {
-                        console.log(res);
-                        console.log(res.user);
+                       // console.log(res);
+                        //console.log(res.user);
                        
-                        console.log(Token.isVaild(res.access_token));
+                       // console.log(Token.isVaild(res.access_token));
                        
                        if(Token.isVaild(res.access_token))
                        {
@@ -22,7 +22,7 @@ class User {
                            //console.log('here    ')
                        }
                        else{
-                           console.log('falsewww');
+                          // console.log('falsewww');
                        }
                        
                       
@@ -31,10 +31,10 @@ class User {
                     hasToken()
                     {
                         const storeToken = AppStorage.getToken()
-                        console.log(AppStorage.getToken())
+                       // console.log(AppStorage.getToken())
                         if(storeToken)
                         {
-                            console.log('test 10')
+                           // console.log('test 10')
                             return Token.isVaild(storeToken)? true:false;
                         }
                         else return false;
@@ -46,12 +46,13 @@ class User {
                         return this.hasToken()
                         
                     }
+                  
 
                     loggedOut()
                     {
-                        console.log('out')
+                       // console.log('out')
                         AppStorage.clear()
-                        window.location='/forum'
+                        window.location='/'
                     }
                     name()
                     {

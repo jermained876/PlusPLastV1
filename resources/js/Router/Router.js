@@ -6,8 +6,13 @@ Vue.use(VueRouter)
 
 import Login from "../components/Login/login.vue"
 
+import Logout from "../components/Logout/logout.vue"
+import Upload from "../components/Upload/upload.vue"
+
 const routes = [
     { path: '/login', component: Login },
+    { path: '/logout', component: Logout },
+    { path: '/upload', component: Upload }
 
 ]
 

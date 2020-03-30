@@ -13,18 +13,21 @@
 						Free shipping for standard order over $100
 					</div>
 
-					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
-						</a>
+					<div class="right-top-bar flex-w h-full" >
+						
+				
 
+						<a href="#" class="flex-c-m " v-for="top in topmenu" :key="top.label">
+						<router-link class="mt-2 p-lr-25" :to="top.to" v-if="top.show">{{top.label}}</router-link>
+						</a>
+<!--
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
 							My Account
 						</a>
 
                         
                             <router-link class="mt-2 p-lr-25" to="/login">Login</router-link>
-
+							
                         
 
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
@@ -34,6 +37,8 @@
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
 							USD
 						</a>
+-->
+						
 					</div>
 				</div>
 			</div>
@@ -299,7 +304,7 @@
 		</div>
 	</div>
 
-{{topmenu}}
+
 
 </div>
 </template>
@@ -310,9 +315,10 @@ export default {
 	data(){
 		return{
 			topmenu:[
-				{label:'Hi',to:'#'},
-				{Label:'Login/Register',to:'/login'},
-				{Label:'WishList',to:'#'}
+				{label:User.name(),to:'#',show:User.loggedIn()},
+				{label:'Login/Register',to:'/login',show:!User.loggedIn()},
+				{label:'Logout',to:'/logout',show:User.loggedIn(),},
+				{label:'WishList',to:'#',show:User.loggedIn()}
 			]
 		}
 	}
@@ -320,6 +326,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+
+
 
 </style>

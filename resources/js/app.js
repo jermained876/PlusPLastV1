@@ -10,6 +10,7 @@ import AppStorage from "./Helper/AppStorage.js"
 require('./bootstrap');
 
 window.Vue = require('vue');
+window.EventBus = new Vue();
 window.User = User;
 window.Token = Token;
 window.AppStorage = AppStorage;
